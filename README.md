@@ -19,7 +19,7 @@ Import *item_type_plugin_mesquitarod_multirow_item.sql* file into your applicati
 
 ## Demo ##
 
-http://bit.ly/2Vqifjv
+bit.ly/2Io4U7E
 
 
 
