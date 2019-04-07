@@ -1,7 +1,5 @@
 var readOnly,
-    limit,
     apexItem,
-    limitMessage,
     defaults = {
     clearInputs: 1,
     separator: ':',
@@ -14,10 +12,9 @@ var readOnly,
 function Plugin(el,custom) {
 
 this.options = defaults;
+this.custom = custom;
 
 readOnly = custom.readOnly;
-limit    = custom.limit;
-limitMessage = custom.limitMessage;
 apexItem = $(el);
 
 this.element =  $(el);
@@ -94,7 +91,7 @@ createElement: function (el, suffix, data) {
     if (!readOnly){ 
     var add = _this.addLink.clone(false).click(function (e) {
         e.preventDefault();
-        if (_this.elementCount < limit) {
+        if (_this.elementCount < _this.custom.limit) {
             var clone = _this.createElement(_this.elementInput, _this.elementCount, '');
             var number = $(this).parents('.inputWrapper').index();
             $('.number', clone).text(number + 2);
@@ -114,7 +111,7 @@ createElement: function (el, suffix, data) {
             apex.message.clearErrors();
             apex.message.showErrors([{type:"error",
                                       location:   "page",
-                                      message:    limitMessage,
+                                      message:    _this.custom.limitMessage,
                                        unsafe:     false
                                       }
                                      ]);
