@@ -23,7 +23,7 @@ http://bit.ly/2Io4U7E
 
 ## Preview ##
 
-![Preview](plugin_preview.gif)
+![Preview](Preview.gif)
 
 
 
