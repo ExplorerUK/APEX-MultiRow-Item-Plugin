@@ -17,12 +17,9 @@ Import *item_type_plugin_mesquitarod_multirow_item.sql* file into your applicati
 ## Dynamic Action ##
 1. The change event dynamic action can be used when add/remove a new item.
 
-## Preview ##
-
-
 ## Demo ##
 
-
+http://bit.ly/2Vqifjv
 
 
 
