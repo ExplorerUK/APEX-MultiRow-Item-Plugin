@@ -27,7 +27,7 @@ prompt APPLICATION 115184 - APEX MultiRow Item Plugin
 -- Application Export:
 --   Application:     115184
 --   Name:            APEX MultiRow Item Plugin
---   Date and Time:   21:50 Sunday April 7, 2019
+--   Date and Time:   08:54 Wednesday April 10, 2019
 --   Exported By:     RODRIGOMESQUITA.TI@GMAIL.COM
 --   Flashback:       0
 --   Export Type:     Application Export
@@ -115,7 +115,7 @@ wwv_flow_api.create_flow(
 ,p_substitution_string_01=>'APP_NAME'
 ,p_substitution_value_01=>'APEX MultiRow Item Plugin'
 ,p_last_updated_by=>'RODRIGOMESQUITA.TI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190407214932'
+,p_last_upd_yyyymmddhh24miss=>'20190410085250'
 ,p_file_prefix => nvl(wwv_flow_application_install.get_static_app_file_prefix,'')
 ,p_files_version=>5
 ,p_ui_type_name => null
@@ -10459,7 +10459,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'RODRIGOMESQUITA.TI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190407214429'
+,p_last_upd_yyyymmddhh24miss=>'20190408094907'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(4936881638731779306)
@@ -10792,6 +10792,7 @@ wwv_flow_api.create_report_region(
 ,p_query_num_rows=>15
 ,p_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_query_show_nulls_as=>'-'
+,p_query_no_data_found=>'No Data Found (hint: the search is case sensitive)'
 ,p_query_num_rows_type=>'NEXT_PREVIOUS_LINKS'
 ,p_pagination_display_position=>'BOTTOM_RIGHT'
 ,p_csv_output=>'N'
@@ -11040,7 +11041,7 @@ wwv_flow_api.create_page(
 ,p_autocomplete_on_off=>'OFF'
 ,p_page_template_options=>'#DEFAULT#'
 ,p_last_updated_by=>'RODRIGOMESQUITA.TI@GMAIL.COM'
-,p_last_upd_yyyymmddhh24miss=>'20190407195109'
+,p_last_upd_yyyymmddhh24miss=>'20190410085250'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(9954527688943149490)
@@ -11068,15 +11069,27 @@ wwv_flow_api.create_page_plug(
 '<li>APEX Version:&nbsp;19.1.0.00.15</li>',
 '<li>Data Source: APEX collections loaded by an application process</li>',
 '</ul>',
-'<p><strong>License:</strong>&nbsp;MIT License<br /><br />Github Project Page:&nbsp;<a href="https://github.com/rodrigomesquitaorclapex/APEX-MultiRow-Item-Plugin">https://github.com/rodrigomesquitaorclapex/APEX-MultiRow-Item-Plugin</a></p>',
-'<p>&nbsp;</p>'))
+'<p><strong>License:</strong>&nbsp;MIT License<br /><br />',
+'Github Project Page:&nbsp;<a href="https://github.com/rodrigomesquitaorclapex/APEX-MultiRow-Item-Plugin"  target="_blank">https://github.com/rodrigomesquitaorclapex/APEX-MultiRow-Item-Plugin</a></p><br />',
+'',
+'<p><strong>Hint:</strong>&nbsp;<br />',
+'',
+'<li>Use APEX_STRING (SPLIT/SHUFFLE) to separate or regroup the colon separated values</li>',
+'<br />',
+'Documentation: <a href="https://docs.oracle.com/en/database/oracle/application-express/19.1/aeapi/APEX_STRING.html#GUID-CAFD987C-7382-4F0F-8CB9-1D3BD05F054A"  target="_blank">APEX_STRING</a>',
+'<br />',
+'<br />',
+'select column_value',
+' From TABLE(apex_string.split(''1:2:3'','':''))',
+'',
+''))
 ,p_plug_query_options=>'DERIVED_REPORT_COLUMNS'
 ,p_attribute_01=>'N'
 ,p_attribute_02=>'HTML'
 );
 wwv_flow_api.create_page_plug(
  p_id=>wwv_flow_api.id(9954527869955149492)
-,p_plug_name=>'New'
+,p_plug_name=>'Breadcrumb'
 ,p_region_template_options=>'#DEFAULT#:t-BreadcrumbRegion--useBreadcrumbTitle'
 ,p_component_template_options=>'#DEFAULT#'
 ,p_plug_template=>wwv_flow_api.id(14709271429148736526)
