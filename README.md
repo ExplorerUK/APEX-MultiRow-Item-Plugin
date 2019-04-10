@@ -25,5 +25,12 @@ http://bit.ly/2Io4U7E
 
 ![Preview](Preview.gif)
 
+## Hint ##
 
+Use APEX_STRING (SPLIT/SHUFFLE) to separate or regroup the colon separated values
+
+Documentation: https://docs.oracle.com/en/database/oracle/application-express/19.1/aeapi/APEX_STRING.html#GUID-CAFD987C-7382-4F0F-8CB9-1D3BD05F054A
+
+select column_value
+ From TABLE(apex_string.split('1:2:3',':'));
 
